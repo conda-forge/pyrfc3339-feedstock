@@ -20,11 +20,14 @@ requirements:
     - pip
   run:
     - python
+    - pip
     - pytz
 
 test:
   imports:
     - pyrfc3339
+  commands:
+    - pip check
 
 about:
   home: https://github.com/kurtraschke/pyRFC3339
