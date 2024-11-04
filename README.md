@@ -1,13 +1,17 @@
-About pyrfc3339
-===============
+About pyrfc3339-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyrfc3339-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/kurtraschke/pyRFC3339
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
-
 Summary: Python library for generating and parsing RFC 3339-compliant timestamps.
+
+Development: https://github.com/kurtraschke/pyRFC3339
+
+Documentation: https://pyrfc3339.readthedocs.io/
 
 pyRFC3339 parses and generates RFC 3339-compliant timestamps using
 Python datetime.datetime objects.
@@ -19,8 +23,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8264&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyrfc3339-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8264&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyrfc3339-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -40,25 +44,52 @@ Installing `pyrfc3339` from the `conda-forge` channel can be achieved by adding 
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pyrfc3339` can be installed with:
+Once the `conda-forge` channel has been enabled, `pyrfc3339` can be installed with `conda`:
 
 ```
 conda install pyrfc3339
 ```
 
-It is possible to list all of the versions of `pyrfc3339` available on your platform with:
+or with `mamba`:
+
+```
+mamba install pyrfc3339
+```
+
+It is possible to list all of the versions of `pyrfc3339` available on your platform with `conda`:
 
 ```
 conda search pyrfc3339 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search pyrfc3339 --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search pyrfc3339 --channel conda-forge
+
+# List packages depending on `pyrfc3339`:
+mamba repoquery whoneeds pyrfc3339 --channel conda-forge
+
+# List dependencies of `pyrfc3339`:
+mamba repoquery depends pyrfc3339 --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -68,10 +99,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
@@ -110,9 +143,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
