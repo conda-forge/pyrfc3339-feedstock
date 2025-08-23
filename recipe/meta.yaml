@@ -1,5 +1,5 @@
 {% set name = "pyrfc3339" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/pyRFC3339/{{ name }}-{{ version }}.tar.gz
-  sha256: e47843379ea35c1296c3b6c67a948a1a490ae0584edfcbdea0eaffb5dd29960b
+  sha256: c569a9714faf115cdb20b51e830e798c1f4de8dabb07f6ff25d221b5d09d8d7f
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
