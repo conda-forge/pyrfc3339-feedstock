@@ -21,7 +21,8 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - setuptools >=64
+    - setuptools_scm >=8
   run:
     - python >=${{ python_min }}
     - pip
@@ -36,8 +37,9 @@ tests:
   - requirements:
       run:
         - python ${{ python_min }}.*
+        - pip
     script:
-      - pip check
+      - pip list | grep pyRFC3339 | grep ${{ version }}
 
 about:
   license: MIT
